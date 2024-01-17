@@ -6,8 +6,13 @@ int main(void)
 {
   int height = defineHeight();
 
-  for (int i = 0; i < height; i++)
+  for (int i = 1; i <= height; i++)
   {
+    for (int k = height; k > i; k--)
+    {
+      printf(".");
+    }
+
     for (int j = 0; j < i; j++)
     {
       printf("#");
