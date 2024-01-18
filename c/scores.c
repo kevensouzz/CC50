@@ -2,53 +2,55 @@
 
 int main(void)
 {
-  float first, second, third, fourth, result;
+  float scores[4];
+  float result;
 
   do
   {
     printf("first note: (0 - 10) ");
-    scanf("%f", &first);
+    scanf("%f", &scores[0]);
 
-    if (first < 0 || first > 10)
+    if (scores[0] < 0 || scores[0] > 10)
     {
       printf("Invalid input. Please enter a value between 0 and 10.\n");
     }
-  } while (first < 0 || first > 10);
+  } while (scores[0] < 0 || scores[0] > 10);
 
   do
   {
     printf("second note: (0 - 10) ");
-    scanf("%f", &second);
+    scanf("%f", &scores[1]);
 
-    if (second < 0 || second > 10)
+    if (scores[1] < 0 || scores[1] > 10)
     {
       printf("Invalid input. Please enter a value between 0 and 10.\n");
     }
-  } while (second < 0 || second > 10);
+  } while (scores[1] < 0 || scores[1] > 10);
 
   do
   {
     printf("third note: (0 - 10) ");
-    scanf("%f", &third);
+    scanf("%f", &scores[2]);
 
-    if (third < 0 || third > 10)
+    if (scores[2] < 0 || scores[2] > 10)
     {
       printf("Invalid input. Please enter a value between 0 and 10.\n");
     }
-  } while (third < 0 || third > 10);
+  } while (scores[2] < 0 || scores[2] > 10);
 
   do
   {
     printf("fourth note: (0 - 10) ");
-    scanf("%f", &fourth);
+    scanf("%f", &scores[3]);
 
-    if (fourth < 0 || fourth > 10)
+    if (scores[3] < 0 || scores[3] > 10)
     {
       printf("Invalid input. Please enter a value between 0 and 10.\n");
     }
-  } while (fourth < 0 || fourth > 10);
+  } while (scores[3] < 0 || scores[3] > 10);
 
-  result = (first + second + third + fourth) / 4;
+  size_t lenght = sizeof(scores) / sizeof(scores[0]);
+  result = (scores[0] + scores[1] + scores[2] + scores[3]) / lenght;
   printf("annual media: %.2f\n", result);
 
   return 0;
