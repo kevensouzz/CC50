@@ -2,8 +2,7 @@
 
 int main(void)
 {
-  float scores[4];
-  float result;
+  float scores[4], result;
 
   do
   {
