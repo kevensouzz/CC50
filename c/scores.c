@@ -1,56 +1,39 @@
 #include <stdio.h>
 
+float average(int length, float array[]);
+
 int main(void)
 {
-  float scores[4], result;
+  int sessionQuantity;
+  printf("session quantity: ");
+  scanf("%d", &sessionQuantity);
+  float scores[sessionQuantity], result;
 
-  do
+  for (int i = 0; i != sessionQuantity; i++)
   {
-    printf("first note: (0 - 10) ");
-    scanf("%f", &scores[0]);
-
-    if (scores[0] < 0 || scores[0] > 10)
+    do
     {
-      printf("Invalid input. Please enter a value between 0 and 10.\n");
-    }
-  } while (scores[0] < 0 || scores[0] > 10);
+      printf("%dª scores: ", i + 1);
+      scanf("%f", &scores[i]);
 
-  do
+      if (scores[i] < 0 || scores[i] > 10)
+      {
+        printf("invalid input; please enter a value between 0 and 10.\n");
+      }
+
+    } while (scores[i] < 0 || scores[i] > 10);
+  }
+
+  result = average(sessionQuantity, scores);
+  printf("average: %.2f\n", result);
+}
+
+float average(int length, float array[])
+{
+  int sum = 0;
+  for (int i = 0; i < length; i++)
   {
-    printf("second note: (0 - 10) ");
-    scanf("%f", &scores[1]);
-
-    if (scores[1] < 0 || scores[1] > 10)
-    {
-      printf("Invalid input. Please enter a value between 0 and 10.\n");
-    }
-  } while (scores[1] < 0 || scores[1] > 10);
-
-  do
-  {
-    printf("third note: (0 - 10) ");
-    scanf("%f", &scores[2]);
-
-    if (scores[2] < 0 || scores[2] > 10)
-    {
-      printf("Invalid input. Please enter a value between 0 and 10.\n");
-    }
-  } while (scores[2] < 0 || scores[2] > 10);
-
-  do
-  {
-    printf("fourth note: (0 - 10) ");
-    scanf("%f", &scores[3]);
-
-    if (scores[3] < 0 || scores[3] > 10)
-    {
-      printf("Invalid input. Please enter a value between 0 and 10.\n");
-    }
-  } while (scores[3] < 0 || scores[3] > 10);
-
-  size_t lenght = sizeof(scores) / sizeof(scores[0]);
-  result = (scores[0] + scores[1] + scores[2] + scores[3]) / lenght;
-  printf("annual media: %.2f\n", result);
-
-  return 0;
+    sum += array[i];
+  }
+  return sum / length;
 }
