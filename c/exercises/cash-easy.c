@@ -1,28 +1,16 @@
 #include <stdio.h>
 
-int countCoins(float changeOwed);
 int i = 0, totalCoins = 0;
-float coins[4] = {0.25, 0.10, 0.5, 0.1}, changeOwed;
-
-int main(void)
-{
-  printf("Change Owed? ");
-  scanf("%f", &changeOwed);
-
-  countCoins(changeOwed);
-
-  printf("Total Coins Used: %d\n", totalCoins);
-}
+float coins[4] = {0.25, 0.10, 0.05, 0.01}, changeOwed;
 
 int countCoins(float changeOwed)
 {
-  if (i <= sizeof(coins) / sizeof(coins[0]))
+  while (i < 4)
   {
     if (changeOwed >= coins[i])
     {
       changeOwed -= coins[i];
       totalCoins++;
-      i++;
       countCoins(changeOwed);
     }
     else
@@ -31,4 +19,15 @@ int countCoins(float changeOwed)
       countCoins(changeOwed);
     }
   }
+}
+
+int main(void)
+{
+  printf("( 0.1 = 0.10$ | 0.01 = 0.01$ )\n\n");
+  printf("change owed? ");
+  scanf("%f", &changeOwed);
+
+  countCoins(changeOwed);
+
+  printf("total coins needed: %d\n", totalCoins);
 }
