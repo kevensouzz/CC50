@@ -16,7 +16,7 @@ int main(void)
 
 int countCoins(float changeOwed)
 {
-  if (i <= 4)
+  if (i <= sizeof(coins) / sizeof(coins[0]))
   {
     if (changeOwed >= coins[i])
     {
