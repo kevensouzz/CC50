@@ -23,7 +23,7 @@ int countCoins(float changeOwed)
 
 int main(void)
 {
-  printf("( 0.1 = 0.10$ | 0.01 = 0.01$ )\n\n");
+  printf("( 0.2 = 0.20$ | 0.02 = 0.2$ )\n\n");
   printf("change owed? ");
   scanf("%f", &changeOwed);
 
