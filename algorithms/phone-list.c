@@ -11,14 +11,16 @@ int action;
 int listAllContacts(void);
 int listASpecificContact(void);
 int addNewContact(void);
+int quit(void);
 
 int pickAction(int action)
 {
-  while (action < 1 || action > 3)
+  while (action < 1 || action > 4)
   {
     printf("\n1. (List all contacts)\n");
     printf("2. (List a specific contact)\n");
-    printf("3. (Add a new contact)\n\n");
+    printf("3. (Add a new contact)\n");
+    printf("4. (Exit)\n\n");
 
     scanf("%d", &action);
 
@@ -32,6 +34,9 @@ int pickAction(int action)
       break;
     case 3:
       addNewContact();
+      break;
+    case 4:
+      quit();
       break;
     default:
       printf("\nInvalid Action!\n");
@@ -120,6 +125,11 @@ int addNewContact(void)
     action = 0;
     pickAction(action);
   }
+}
+
+int quit(void)
+{
+  printf("\nSuccessfully quited!\n");
 }
 
 int main(void)
