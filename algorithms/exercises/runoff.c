@@ -179,7 +179,7 @@ int find_min(void)
 
 bool is_tie(int min)
 {
-    int min = find_min();
+    min = find_min();
 
     for (int i = 0; i < candidate_count; i++)
     {
@@ -193,7 +193,7 @@ bool is_tie(int min)
 
 void eliminate(int min)
 {
-    int min = find_min();
+    min = find_min();
 
     for (int i = 0; i < candidate_count; i++)
     {
