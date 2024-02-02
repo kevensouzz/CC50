@@ -3,19 +3,12 @@ import csv
 
 
 def dna_identification(strs, dna):
-    header = strs[0]
-    str_info = header[1:]
-
+    str_info = strs[0][1:]
     str_count = [dna.count(word) for word in str_info]
-
-    str_values = strs
-    del str_values[0]
-
+    str_values = strs[1:]
     str_names = []
     for row in str_values:
         str_names.append(row[0])
-
-    for row in str_values:
         del row[0]
 
     for index, sublist in enumerate(str_values):
